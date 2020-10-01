@@ -1,7 +1,7 @@
-// Sequelize with capital references the sequelize library 
-const Sequelize = require("sequelize");
-// sequelize with a lowercase references our connection to the DB using config.js
-const sequelize = require("../config/config");
+// // Sequelize with capital references the sequelize library
+// const Sequelize = require("sequelize");
+// // sequelize with a lowercase references our connection to the DB using config.js
+// const sequelize = require("../config/config");
 
 const bcrypt = require('bcrypt');
 
@@ -33,11 +33,7 @@ module.exports = function (sequelize, DataTypes) {
     isAdmin: {
       type: DataTypes.BOOLEAN,
       defaultValue: false
-    },
-    avatar: {
-      type: DataTypes.STRING,
-      defaultValue: /*default image*?
-    },
+    }
   }, {
     timestamps: true,
     hooks: {
@@ -61,6 +57,7 @@ module.exports = function (sequelize, DataTypes) {
     User.hasMany(models.Connection, {
       onDelete: 'cascade'
     });
+  };
 
   // This will check if an unhashed password can be compared to the hashed password stored in our database
   User.prototype.validPassword = function (password) {

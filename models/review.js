@@ -1,30 +1,43 @@
 module.exports = (sequelize, DataTypes) => {
-  const Connection = sequelize.define('Connection', {
+  const Review = sequelize.define('Review', {
     // Model attributes are defined here
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    followerID: {
+    rating: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    followeeID: {
+    comments: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    bookID: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    userID: {
       type: DataTypes.INTEGER,
       allowNull: false
     }
   });
 
-  Connection.associate = function (models) {
+  Review.associate = function (models) {
     // We're saying that a Post should belong to an Author
     // A Post can't be created without an Author due to the foreign key constraint
-    Connection.belongsTo(models.User, {
+    Review.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+    Review.belongsTo(models.Book, {
       foreignKey: {
         allowNull: false
       }
     });
   };
 
-  return Connection;
+  return Review;
 };
