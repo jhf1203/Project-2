@@ -14,6 +14,14 @@ module.exports = (sequelize, DataTypes) => {
     isbn: {
       type: DataTypes.INTEGER,
       allowNull: false
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    coverPhoto: {
+      type: DataTypes.STRING,
+      allowNull: true
     }
   });
 
