@@ -1,4 +1,3 @@
-
 module.exports = (sequelize, DataTypes) => {
   const Book = sequelize.define('Book', {
     // Model attributes are defined here
@@ -24,6 +23,15 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true
     }
   });
+
+  Book.associate = function (models) {
+    Book.hasMany(models.Review, {
+      onDelete: 'cascade'
+    });
+    Book.hasMany(models.Recommendation, {
+      onDelete: 'cascade'
+    });
+  };
 
   return Book;
 };
