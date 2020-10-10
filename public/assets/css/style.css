@@ -238,9 +238,9 @@ hr {
   color: #aeb4b2;
 }
 
-#userCard {
+/* #userCard {
   margin-left:15%;
-}
+} */
 
 .flex {
   display: flex;
@@ -335,7 +335,6 @@ hr {
   margin-left: 15%;
 }
 
-<<<<<<< HEAD
 /*reviews button*/
 #btnReview{
   background: white;
@@ -352,8 +351,6 @@ hr {
   border-radius: 5px
 }
 
-=======
->>>>>>> ac6faedb1f5a7903e7dec23ffd1964248aee4693
 /*refresh button*/
 .btnRefresh {
   background: white;
