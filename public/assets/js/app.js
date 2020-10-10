@@ -3,12 +3,21 @@ $(document).ready(function () {
 
   // ========== Events
 
+  const seedBooks = ['cat', 'earth', 'run', 'fire', 'hunger', 'Winter', 'world', 'tomorrow', 'the', 'turn', 'fly', 'moon', 'tales', 'dog', 'star', 'power', 'catch', 'feel', 'house', 'event', 'game', 'valor', 'war', 'prince', 'woman', 'man', 'pirate', 'fish', 'fantasy', 'stories', 'evil', 'good', 'truth'];
+  const randomBook = seedBooks[Math.floor(Math.random() * seedBooks.length)];
+  // const searchTerm = $('#searchBook').val();
+
   $('.submit-search').on('click', function () {
     const param = $('.search-field').val();
     findBook('title', param);
   });
 
   $('.refreshBtn').on('click', function () {
+    findBook('title', randomBook);
+  });
+
+  $('.view-books').on('click', function (event) {
+    event.preventDefault();
     findBook('title', randomBook);
   });
 
@@ -96,10 +105,6 @@ $(document).ready(function () {
       console.log(result);
     });
   });
-
-  const seedBooks = ['cat', 'earth', 'run', 'fire', 'hunger', 'Winter', 'world', 'tomorrow', 'the', 'turn', 'fly', 'moon', 'tales', 'dog', 'star', 'power', 'catch', 'feel', 'house', 'event', 'game', 'valor', 'war', 'prince', 'woman', 'man', 'pirate', 'fish', 'fantasy', 'stories', 'evil', 'good', 'truth'];
-  const randomBook = seedBooks[Math.floor(Math.random() * seedBooks.length)];
-  // const searchTerm = $('#searchBook').val();
 
   function findBook (val, query) {
     const queryURL = 'https://www.googleapis.com/books/v1/volumes?q=in' + val + ':' + query + '&key=AIzaSyAGwS80on7Jfqi4kEejw10c-FfiMIUDj_I';
@@ -303,42 +308,4 @@ $(document).ready(function () {
       }
     });
   });
-
-  // ========GET=========
-
-  // function to get users followers
-  // $('.btnFollowers').on('click', function getFollowers () {
-  //   // const user = window.user;
-  //   $.ajax({
-  //     type: 'GET',
-  //     url: '/api/connections/'
-  //   }).then(function (res) {
-  //     const followerList = $('<ul>');
-  //     for (let i = 0; i < res.length; i++) {
-  //       const oneFollower = $('<li>').text(`${res.User.firstName} ${res.User.lastName}`);
-  //       followerList.append(oneFollower);
-  //     }
-  //     $('#myModal1').append(followerList).css('z-index', '2');
-  //   });
-  // });
-
-  // // function to see who the user is following
-  // $('.btnFollowing').on('click', function getFollowing () {
-  //   // const user = window.user;
-  //   $.ajax({
-  //     type: 'GET',
-  //     url: '/api/connections/'
-  //   }).then(function (res) {
-  //     const followingList = $('<ul>');
-  //     for (let i = 0; i < res.length; i++) {
-  //       const oneFollower = $('<li>').text(`${res.User.firstName} ${res.User.lastName}`);
-  //       followingList.append(oneFollower);
-  //     }
-  //     $('#myModal3').append(followingList).css('z-index', '2');
-  //   });
-  // });
-
-  // function to get user information
-
-  // ========DELETE========
 });
