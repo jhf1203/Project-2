@@ -1,4 +1,7 @@
 $(document).ready(function () {
+  
+  // User Actions
+  
   $('.submit-search').on('click', function () {
     const param = $('.search-field').val();
 
