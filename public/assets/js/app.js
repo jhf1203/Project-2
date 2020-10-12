@@ -5,6 +5,8 @@ $(document).ready(function () {
 
   const seedBooks = ['cat', 'earth', 'run', 'fire', 'hunger', 'Winter', 'world', 'tomorrow', 'the', 'turn', 'fly', 'moon', 'tales', 'dog', 'star', 'power', 'catch', 'feel', 'house', 'event', 'game', 'valor', 'war', 'prince', 'woman', 'man', 'pirate', 'fish', 'fantasy', 'stories', 'evil', 'good', 'truth'];
   const randomBook = seedBooks[Math.floor(Math.random() * seedBooks.length)];
+  findBook('title', randomBook);
+
   // const searchTerm = $('#searchBook').val();
 
   $('.submit-search').on('click', function () {
@@ -12,11 +14,7 @@ $(document).ready(function () {
     findBook('title', param);
   });
 
-  $('.refreshBtn').on('click', function () {
-    findBook('title', randomBook);
-  });
-
-  $('.view-books').on('click', function (event) {
+  $('.refreshBtn').on('click', function (event) {
     event.preventDefault();
     findBook('title', randomBook);
   });
