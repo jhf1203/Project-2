@@ -238,9 +238,9 @@ hr {
   color: #aeb4b2;
 }
 
-/* #userCard {
+#userCard {
   margin-left:15%;
-} */
+}
 
 .flex {
   display: flex;
@@ -345,7 +345,7 @@ hr {
 }
 
 /* delete book */
-.fake-class {
+.remove-button {
   border: 2px solid #617056;
   background-color:white;
   border-radius: 5px

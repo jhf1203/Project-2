@@ -90,7 +90,7 @@ $(document).ready(function () {
     });
   });
 
-  $('.fake-class').on('click', function () {
+  $('.remove-button').on('click', function () {
     const entryId = $(this).attr('id');
     console.log($(this).parent());
     console.log(entryId);
