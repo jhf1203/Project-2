@@ -24,8 +24,10 @@
                   <div class="col-md-12">
                     <p class="card-text">{{userInfo.firstName}} is currently reading:
                       {{#each currentList}}
-                      <br>
-                      {{ title }}
+                      <p class={{id}}>{{title}}
+                        <button id={{id}} class="remove-button" {{id}}><i class="fa fa-times test-icon"></i>
+                          <span hidden>
+                            {{id}}</span></button></p><br>
                       {{/each}}
                     </p>
                   </div>
@@ -168,7 +170,11 @@
 
 
 <script>
-  var userId = {{ userInfo.id }};
+  var userId = {
+    {
+      userInfo.id
+    }
+  };
 </script>
 
 {{> modal/login-block}}
