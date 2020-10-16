@@ -24,8 +24,10 @@
                   <div class="col-md-12">
                     <p class="card-text">{{userInfo.firstName}} is currently reading:
                       {{#each currentList}}
-                      <br>
-                      {{ title }}
+                      <p class={{id}}>{{title}}
+                        <button id={{id}} class="remove-button" {{id}}><i class="fa fa-times test-icon"></i>
+                          <span hidden>
+                            {{id}}</span></button></p><br>
                       {{/each}}
                     </p>
                   </div>
@@ -52,7 +54,7 @@
 <section class="container-fluid">
   <div class="row readRow">
     <div class="col-8 mx-auto">
-      <div id="haveReadCard" class="card mb-3 scroll" style="max-width: 500px;">
+      <div id="haveReadCard" class="card mb-3" style="max-width: 500px;">
         <div class="card-block">
           <div class="card-header">Have Read</div>
           <div class="card-body" id="cardBody2">
@@ -76,7 +78,7 @@
   <div class="row readRow">
     <div class="col-8 mx-auto">
       <div class="overflow-auto">
-        <div id="haveReadCard" class="card mb-3 scroll" style="max-width: 500px;">
+        <div id="haveReadCard" class="card mb-3" style="max-width: 500px;">
           <div class="card-block">
             <div class="card-header">Want To Read</div>
             <div class="card-body" id="cardBody2">
@@ -168,7 +170,11 @@
 
 
 <script>
-  var userId = {{ userInfo.id }};
+  var userId = {
+    {
+      userInfo.id
+    }
+  };
 </script>
 
 {{> modal/login-block}}

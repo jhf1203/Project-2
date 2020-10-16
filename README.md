@@ -53,12 +53,10 @@ The technologies featured in this app are:<br>
 <hr>
 
 ## Test:
-***DEMO VIDEO***
 
-<hr>
+Below you'll find an animated walkthrough of the application's functionality and navigation.
 
-## Images:
-***Finished App Images***
+![image](./public/assets/images/bookmarked-demo.gif)
 
 <hr>
   

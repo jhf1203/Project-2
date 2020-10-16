@@ -69,8 +69,8 @@ $(document).ready(function () {
         }
       };
       console.log('pastArr length is ', pastArr.length, 'current is ', currentArr.length, 'and future is ', futureArr.length);
-      const pastHeading = $('<ul>').attr('class', 'connection-book-header').text('Books I have read' + '<hr />');
-      const currentHeading = $('<ul>').attr('class', 'connection-book-header').text('Books I am currently reading' + '<hr />');
+      const pastHeading = $('<ul>').attr('class', 'connection-book-header').text('Books I have read');
+      const currentHeading = $('<ul>').attr('class', 'connection-book-header').text('Books I am currently reading');
       const futureHeading = $('<ul>').attr('class', 'connection-book-header').text('Books I would like to read');
 
       for (let i = 0; i < pastArr.length; i++) {
