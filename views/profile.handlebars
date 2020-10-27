@@ -1,8 +1,9 @@
 {{> nav/nav-block user=true register=false}}
 
 <!--Card for user Profile-->
-<section class="row userRow">
-  <div class="container-fluid">
+
+  <section class="container-fluid">
+    <div class="row userRow">
     <div class="col-8 mx-auto">
       <div id="userCard" class="card mb-3" style="max-width: 900px;">
         <div id="cardHeader" class="card-header">
@@ -24,8 +25,10 @@
                   <div class="col-md-12">
                     <p class="card-text">{{userInfo.firstName}} is currently reading:
                       {{#each currentList}}
-                      <br>
-                      {{ title }}
+                      <p class={{id}}>{{title}}
+                        <button id={{id}} class="remove-button" {{id}}><i class="fa fa-times test-icon"></i>
+                          <span hidden>
+                            {{id}}</span></button></p><br>
                       {{/each}}
                     </p>
                   </div>
@@ -46,20 +49,18 @@
       </div>
     </div>
   </div>
-</section>
 
 <!--Have read book card-->
-<section class="container-fluid">
   <div class="row readRow">
     <div class="col-8 mx-auto">
-      <div id="haveReadCard" class="card mb-3 scroll" style="max-width: 500px;">
+      <div id="haveReadCard" class="card mb-3" style="max-width: 500px;">
         <div class="card-block">
           <div class="card-header">Have Read</div>
           <div class="card-body" id="cardBody2">
             <ul class='future-list'>
               {{#each pastList}}
               <p class={{id}}>{{title}}
-                <button id={{id}} class="fake-class" {{id}}><i class="fa fa-times test-icon"></i>
+                <button id={{id}} class="remove-button" {{id}}><i class="fa fa-times test-icon"></i>
                   <span hidden>
                     {{id}}</span></button></p>
               {{/each}}
@@ -69,21 +70,19 @@
       </div>
     </div>
   </div>
-</section>
 
 <!--Have want to read book card-->
-<section class="container-fluid">
   <div class="row readRow">
     <div class="col-8 mx-auto">
       <div class="overflow-auto">
-        <div id="haveReadCard" class="card mb-3 scroll" style="max-width: 500px;">
+        <div id="haveReadCard" class="card mb-3" style="max-width: 500px;">
           <div class="card-block">
             <div class="card-header">Want To Read</div>
             <div class="card-body" id="cardBody2">
               <ul class='future-list'>
                 {{#each futureList}}
                 <p class={{id}}>{{title}}
-                  <button id={{id}} class="fake-class" {{id}}><i class="fa fa-times test-icon"></i>
+                  <button id={{id}} class="remove-button" {{id}}><i class="fa fa-times test-icon"></i>
                     <span hidden>
                       {{id}}</span></button></p>
                 {{/each}}
@@ -94,6 +93,7 @@
       </div>
     </div>
   </div>
+  
 </section>
 
 <!-- Followers Modal -->
@@ -168,7 +168,11 @@
 
 
 <script>
-  var userId = {{ userInfo.id }};
+  var userId = {
+    {
+      userInfo.id
+    }
+  };
 </script>
 
 {{> modal/login-block}}
